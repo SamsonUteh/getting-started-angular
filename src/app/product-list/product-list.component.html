@@ -1,0 +1,24 @@
+<h2>products</h2>
+
+<div *ngFor="let product of products">
+
+  <h3>
+    <a [title]="product.name + ' details'"
+    [style.color]="'blue'">
+      {{product.name}}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description; else noDesc">
+    description: {{product.description}}
+  </p>
+
+  <!-- <ng-template #noDesc>
+    description: None
+  </ng-template> -->
+
+  <button class="btn btn-primary" (click)="share()">Share</button><br>
+  <!-- <button class="btn btn-primary" *ngIf="product.price > 700">Notify</button> -->
+
+  <app-product-alerts [product]="product"></app-product-alerts>
+</div>
