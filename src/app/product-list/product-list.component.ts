@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { products } from '../products';
 
@@ -10,6 +11,8 @@ export class ProductListComponent implements OnInit {
 
   products = products;
 
+  nadus: any;
+
   share(){
     window.alert("The product has been shared");
   }
@@ -18,9 +21,10 @@ export class ProductListComponent implements OnInit {
     window.alert("You will be notified when the product goes on sale");
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.nadus = this.http.get('')
   }
 
 }

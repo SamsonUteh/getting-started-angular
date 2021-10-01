@@ -18,7 +18,9 @@ export class CartService {
   }
 
   clearCart(){
-    this.items.slice();
+    // this.items.slice();
+    this.items = [];
+    return this.items;
   }
 
   getShippingPrices(){

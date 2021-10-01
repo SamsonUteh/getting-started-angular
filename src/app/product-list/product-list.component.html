@@ -1,6 +1,7 @@
 <h2>products</h2>
 
-<div *ngFor="let product of products">
+// ngFor is used here because products is an array
+<div *ngFor="let product of products"> 
 
   <h3>
     <a [title]="product.name + ' details'"
